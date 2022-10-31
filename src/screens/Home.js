@@ -29,13 +29,13 @@ const Home = ({ navigation }) => {
                             <Image style={styles.Image} source={require('../../assets/clases-de-matematica-online.jpg')} />
                         </View>
                         <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                            <Text style={{ color: "#FFFFFF" }} bold h6>Bienvenid@ introducete al maravilloso mundo de las matematicas </Text>
-                            <Text style={{ color: "#FFFFFF" }} bold h6>La app de clases mas efectiva</Text>
+                            <Text style={{ color: "#FFFFFF", fontSize: height / 50 }} bold h6>Bienvenid@ introducete al maravilloso mundo de las matematicas </Text>
+                            <Text style={{ color: "#FFFFFF", fontSize: height / 50 }} bold h6>La app de clases mas efectiva</Text>
                         </View>
                     </View>
                 </Card>
 
-                <Card style={{ backgroundColor: "#F5F5F5" }}>
+                <Card style={{ backgroundColor: "#F5F5F5", height: height / 4 }}>
                     <View>
                         <View style={styles.cardmateria}>
                             <Text style={{ color: "#555273" }} bold h6> Asignaturas disponibles </Text>
@@ -48,7 +48,7 @@ const Home = ({ navigation }) => {
                         </View>
                     </View>
                 </Card>
-                <Card style={styles.bigBlue}>
+                <Card style={[styles.bigBlue, { height: height / 2.5 }]}>
                     <View style={styles.cardmateria}>
                         <Text style={{ color: "#FFFFFF" }} h6>Nuestra ubicacion</Text>
                         <MapView initialRegion={{
@@ -118,3 +118,4 @@ const styles = StyleSheet.create({
         height: height / 3,
     },
 });
+
