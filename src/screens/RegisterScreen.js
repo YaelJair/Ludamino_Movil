@@ -2,6 +2,7 @@ import { View, StyleSheet, ScrollView, Image } from 'react-native'
 import { Avatar } from 'react-native-paper';
 import DropDownPicker from 'react-native-dropdown-picker';
 import React from 'react'
+import { width, height } from "../../styles/HomeStyles";
 import { Accordion, Input, Block, Card, theme, withGalio, GalioProvider, Button, Text } from 'galio-framework';
 const RegisterScreen = () => {
 
@@ -13,19 +14,20 @@ const RegisterScreen = () => {
     ]);
     return (
         <View style={styles.Fondo}>
-
+            <ScrollView>
             <View style={styles.container}>
-                <Image style={{ width: 360, height: 200 }} source={require('../../assets/logo_transparent.png')} />
+                    <Image style={{ width: width / 2, height: height / 7 }} source={require('../../assets/logo_transparent.png')} />
             </View>
             <View style={styles.container1}>
-                <Input placeholder="Nombre"></Input>
-                <Input placeholder="Correo" type='email-addres'></Input>
-                <Input placeholder="Contraceña" password viewPass />
-                <Input placeholder="Confirmar Contraceña" password viewPass />
-                <Input placeholder="Telefono" type='phone-pad' />
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Nombre"></Input>
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Correo" type='email-addres'></Input>
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Contraceña" password viewPass />
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Confirmar Contraceña" password viewPass />
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Telefono" type='phone-pad' />
                 <DropDownPicker
-                    style={{ borderColor: "#BBB8BA" }}
+                        style={{ borderColor: "#555273" }}
                     placeholder='Tipo de usuario'
+                        placeholderTextColor={"#555273"}
                     open={open}
                     value={value}
                     items={items}
@@ -36,6 +38,7 @@ const RegisterScreen = () => {
                 <Button color="#555273">Registrarse</Button>
                 <Text>¿ya estas registrado?</Text>
             </View>
+            </ScrollView>
         </View>
     )
 }
@@ -47,13 +50,15 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "20%"
+        paddingTop: height / 25
     },
     container1: {
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "20%"
+        paddingTop: "20%",
+        paddingRight: width / 9,
+        paddingLeft: width / 9
     },
     color: {
         backgroundColor: '#B21B9D',

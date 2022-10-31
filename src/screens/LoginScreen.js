@@ -1,5 +1,6 @@
 import { View, StyleSheet, ScrollView, Image } from 'react-native'
 import { Avatar } from 'react-native-paper';
+import { width, height } from "../../styles/HomeStyles";
 
 import React from 'react'
 import { Input, Block, Card, theme, withGalio, GalioProvider, Button, Text } from 'galio-framework';
@@ -8,11 +9,11 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.Fondo}>
 
             <View style={styles.container}>
-                <Image style={{ width: 360, height: 200 }} source={require('../../assets/logo_transparent.png')} />
+                <Image style={{ width: width / 2, height: height / 7 }} source={require('../../assets/logo_transparent.png')} />
             </View>
             <View style={styles.container1}>
-                <Input placeholder="Correo" type='email-addres'></Input>
-                <Input placeholder="Contraceña" password viewPass />
+                <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Correo" type='email-addres'></Input>
+                <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Contraceña" password viewPass />
                 <Button onPress={() => navigation.navigate("Cursos")} color="#555273">Ingresar</Button>
             </View>
         </View>
@@ -31,7 +32,9 @@ const styles = StyleSheet.create({
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "20%"
+        paddingTop: "20%",
+        paddingRight: width / 7,
+        paddingLeft: width / 7
     },
     color: {
         backgroundColor: '#B21B9D',
