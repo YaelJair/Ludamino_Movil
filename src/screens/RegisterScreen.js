@@ -21,8 +21,8 @@ const RegisterScreen = () => {
             <View style={styles.container1}>
                     <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Nombre"></Input>
                     <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Correo" type='email-addres'></Input>
-                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Contraceña" password viewPass />
-                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Confirmar Contraceña" password viewPass />
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Contraseña" password viewPass />
+                    <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Confirmar Contraseña" password viewPass />
                     <Input style={{ borderColor: "#555273" }} placeholderTextColor={"#555273"} placeholder="Telefono" type='phone-pad' />
                 <DropDownPicker
                         style={{ borderColor: "#555273" }}

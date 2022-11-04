@@ -4,8 +4,7 @@ import React from 'react'
 import { Button, Text } from 'galio-framework';
 import { width, height } from "../../styles/HomeStyles";
 import MapView from 'react-native-maps';
-const CursosScreen = () => {
-    const [searchQuery, setSearchQuery] = React.useState('');
+const ActivivdadesScreen = () => {
     return (
         <View>
             <ScrollView>
@@ -22,12 +21,12 @@ const CursosScreen = () => {
                 <Card style={[styles.bigBlue, { height: height / 5 }]}>
                     <View style={[styles.card1, { paddingTop: height / 40 }]}>
                         <View style={styles.card2}>
-                            <Image style={styles.Image} source={require('../../assets/estadistica.jpg')} />
+                            <Image style={styles.Image} source={require('../../assets/clases-de-matematica-online.jpg')} />
                         </View>
                         <View style={[styles.card4, { paddingTop: height / 50 }]}>
                             <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Estadistica y Probabilidad </Text>
                             <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
+                                <Button style={{ width: width / 2.2 }} round size="small" color="#886FC7">Ver actividad del curso</Button>
                             </View>
                         </View>
                     </View>
@@ -37,12 +36,12 @@ const CursosScreen = () => {
                     <Card style={[styles.bigBlue, { height: height / 5 }]}>
                         <View style={[styles.card1, { paddingTop: height / 40 }]}>
                             <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/algebraico.jpg')} />
+                                <Image style={styles.Image} source={require('../../assets/clases-de-matematica-online.jpg')} />
                             </View>
                             <View style={[styles.card4, { paddingTop: height / 50 }]}>
                                 <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>lenguaje algebraico</Text>
                                 <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
+                                    <Button style={{ width: width / 2.2 }} round size="small" color="#886FC7">Ver actividad del curso</Button>
                                 </View>
                             </View>
                         </View>
@@ -53,28 +52,12 @@ const CursosScreen = () => {
                     <Card style={[styles.bigBlue, { height: height / 5 }]}>
                         <View style={[styles.card1, { paddingTop: height / 40 }]}>
                             <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/derivadas2.jpeg')} />
+                                <Image style={styles.Image} source={require('../../assets/derivadas.png')} />
                             </View>
                             <View style={[styles.card4, { paddingTop: height / 50 }]}>
                                 <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Derivadas</Text>
                                 <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                                </View>
-                            </View>
-                        </View>
-
-                    </Card>
-                </View>
-                <View style={[{ paddingTop: 10 }]}>
-                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                            <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/integrales.jpg')} />
-                            </View>
-                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Integrales </Text>
-                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
+                                    <Button style={{ width: width / 2.2 }} round size="small" color="#886FC7">Ver actividad del curso</Button>
                                 </View>
                             </View>
                         </View>
@@ -90,7 +73,23 @@ const CursosScreen = () => {
                             <View style={[styles.card4, { paddingTop: height / 50 }]}>
                                 <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Estadistica y Probabilidad </Text>
                                 <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
+                                    <Button style={{ width: width / 2.2 }} round size="small" color="#886FC7">Ver actividad del curso</Button>
+                                </View>
+                            </View>
+                        </View>
+
+                    </Card>
+                </View>
+                <View style={[{ paddingTop: 10 }]}>
+                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
+                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
+                            <View style={styles.card2}>
+                                <Image style={styles.Image} source={require('../../assets/clases-de-matematica-online.jpg')} />
+                            </View>
+                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
+                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Estadistica y Probabilidad </Text>
+                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
+                                    <Button style={{ width: width / 2.2 }} round size="small" color="#886FC7">Ver actividad del curso</Button>
                                 </View>
                             </View>
                         </View>
@@ -102,8 +101,7 @@ const CursosScreen = () => {
     )
 }
 
-export default CursosScreen
-
+export default ActivivdadesScreen
 
 const styles = StyleSheet.create({
     container: {
