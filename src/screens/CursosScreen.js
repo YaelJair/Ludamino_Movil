@@ -1,11 +1,26 @@
 import { View, StyleSheet, ScrollView, Image } from 'react-native'
 import { Avatar, Card, Searchbar } from 'react-native-paper';
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Button, Text } from 'galio-framework';
 import { width, height } from "../../styles/HomeStyles";
 import MapView from 'react-native-maps';
-const CursosScreen = () => {
+
+
+export default function CursosScreen(props, navigation) {
     const [searchQuery, setSearchQuery] = React.useState('');
+    const [Materias, setMaterias] = React.useState([]);
+
+    useEffect(() => {
+
+
+            console.log("soy el useEffectc");
+            console.log("soy el useEffectc");
+            fetch('https://practicasmari.ludamino.proyectostics.com/api/mdl_materias')
+        .then(response => response.json())
+        .then(data => setMaterias(data));
+       
+    }, []);
+
     return (
         <View>
             <ScrollView>
@@ -19,90 +34,32 @@ const CursosScreen = () => {
                     </Card.Content>
 
                 </Card >
-                <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                    <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                        <View style={styles.card2}>
-                            <Image style={styles.Image} source={require('../../assets/estadistica.jpg')} />
-                        </View>
-                        <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                            <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Estadistica y Probabilidad </Text>
-                            <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                            </View>
-                        </View>
-                    </View>
-
-                </Card>
-                <View style={[{ paddingTop: 10 }]}>
-                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                            <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/algebraico.jpg')} />
-                            </View>
-                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>lenguaje algebraico</Text>
-                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                                </View>
-                            </View>
-                        </View>
-
-                    </Card>
-                </View>
-                <View style={[{ paddingTop: 10 }]}>
-                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                            <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/derivadas2.jpeg')} />
-                            </View>
-                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Derivadas</Text>
-                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                                </View>
-                            </View>
-                        </View>
-
-                    </Card>
-                </View>
-                <View style={[{ paddingTop: 10 }]}>
-                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                            <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/integrales.jpg')} />
-                            </View>
-                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Integrales </Text>
-                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                                </View>
-                            </View>
-                        </View>
-
-                    </Card>
-                </View>
-                <View style={[{ paddingTop: 10 }]}>
-                    <Card style={[styles.bigBlue, { height: height / 5 }]}>
-                        <View style={[styles.card1, { paddingTop: height / 40 }]}>
-                            <View style={styles.card2}>
-                                <Image style={styles.Image} source={require('../../assets/clases-de-matematica-online.jpg')} />
-                            </View>
-                            <View style={[styles.card4, { paddingTop: height / 50 }]}>
-                                <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>Estadistica y Probabilidad </Text>
-                                <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
-                                    <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
-                                </View>
-                            </View>
-                        </View>
-
-                    </Card>
-                </View>
+                {Materias.map((event) => (
+                     <Card style={[styles.bigBlue, { height: height / 5 }]}>
+                     <View style={[styles.card1, { paddingTop: height / 40 }]}>
+                         <View style={styles.card2}>
+                             <Image style={styles.Image} source={require('../../assets/estadistica.jpg')} />
+                         </View>
+                         <View style={[styles.card4, { paddingTop: height / 50 }]}>
+                             <Text style={{ color: "#FFFFFF", fontSize: height / 50, paddingLeft: width / 15 }} bold h6>{event.materia} </Text>
+                             <View style={{ paddingTop: height / 30, paddingLeft: width / 15 }}>
+                                 <Button style={{ width: width / 2.2 }} round size="small" color="#4AD187">Ver actividad del curso</Button>
+                             </View>
+                         </View>
+                     </View>
+ 
+                 </Card>
+                    ))}
+               
+                
             </ScrollView>
         </View>
     )
 }
 
-export default CursosScreen
+
+
+
 
 
 const styles = StyleSheet.create({
